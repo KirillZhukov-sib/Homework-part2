@@ -1,0 +1,23 @@
+﻿<Window x:Class="Homework_part2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_part2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Name="MyGrid">
+        <Button Content="Button" HorizontalAlignment="Left" Margin="448,201,0,0" VerticalAlignment="Top" Width="101" Height="80"/>
+        <Button Content="123" Margin="0,99,0,0" Width="149" VerticalAlignment="Top" BorderBrush="#FF28841B" Height="66" Click="Button_Click_1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1E4DBF" Offset="0"/>
+                    <GradientStop Color="Red" Offset="0.5"/>
+                    <GradientStop Color="#FF63D842" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.HorizontalAlignment>left</Button.HorizontalAlignment>
+        </Button>
+    </Grid>
+
+</Window>
