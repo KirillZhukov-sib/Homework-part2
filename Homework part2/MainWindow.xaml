@@ -5,19 +5,70 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_part2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Name="MyGrid">
-        <Button Content="Button" HorizontalAlignment="Left" Margin="448,201,0,0" VerticalAlignment="Top" Width="101" Height="80"/>
-        <Button Content="123" Margin="0,99,0,0" Width="149" VerticalAlignment="Top" BorderBrush="#FF28841B" Height="66" Click="Button_Click_1">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF1E4DBF" Offset="0"/>
-                    <GradientStop Color="Red" Offset="0.5"/>
-                    <GradientStop Color="#FF63D842" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-            <Button.HorizontalAlignment>left</Button.HorizontalAlignment>
-        </Button>
-    </Grid>
+        Title="MainWindow" Height="200" Width="350">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="283*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox 
+            Name ="Number1TextBox"
+        HorizontalAlignment="Left" 
+        Margin="10,10,0,0" 
+        TextWrapping="Wrap" 
+        Text="TextBox"
+        VerticalAlignment="Top" 
+        Width="150" 
+        Height="20" FontSize="16"/>
 
+        <TextBox  
+            Name ="Number2TextBox"
+            HorizontalAlignment="Left" 
+             Margin="170,10,0,0" 
+             TextWrapping="Wrap" 
+             Text="TextBox"
+             VerticalAlignment="Top" 
+             Width="150" 
+             Height="20" FontSize="16" Grid.ColumnSpan="2"/>
+        <Button 
+            Content="+" 
+            HorizontalAlignment="Left" 
+            Margin="10,40,0,0"
+            Width="150" 
+            Height="20"
+            VerticalAlignment="Top" 
+            Click="Button_Click"/>
+        <Button 
+            Content="-" 
+            HorizontalAlignment="Left" 
+            Margin="10,70,0,0"
+            Width="150" 
+            Height="20"
+            VerticalAlignment="Top"
+            Click="Button_Click"/>
+
+        <Button 
+            Content="*" 
+            HorizontalAlignment="Left" 
+            Margin="170,40,0,0"
+            Width="150" 
+            Height="20"
+            VerticalAlignment="Top" Grid.ColumnSpan="2"
+            Click="Button_Click"/>
+        <Button 
+            Content="/" 
+            HorizontalAlignment="Left" 
+            Margin="170,70,0,0"
+            Width="150" 
+            Height="20"
+            VerticalAlignment="Top" 
+            Grid.ColumnSpan="2"
+            Click="Button_Click"/>
+        <TextBlock 
+            Name ="Result"
+            HorizontalAlignment="Left" 
+                   Margin="143,110,0,0"
+                   Text="Результат: 0" 
+                   VerticalAlignment="Top"/>
+    </Grid>
 </Window>

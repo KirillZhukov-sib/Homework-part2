@@ -22,13 +22,38 @@ namespace Homework_part2
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("WPF на METANIT.COM");
-        }
+            try
+            {
+                double num1 = Convert.ToDouble(Number1TextBox.Text);
+                double num2 = Convert.ToDouble(Number2TextBox.Text);
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Button button = (Button)sender;
-            button.Content = "111111";
+                double res = 0;
+
+                Button button = (Button)sender;
+                switch (button.Content)
+                {
+                    case "+":
+                        res = num1 + num2;
+                        break;
+                    case "-":
+                        res = num1 - num2;
+                        break;
+                    case "*":
+                        res = num1 * num2;
+                        break;
+                    case "/":
+                        if (num2 == 0)
+                        { throw new InvalidOperationException("Деление на 0"); }
+                        res = num1 / num2;
+                        break;
+                }
+                Result.Text = $"Результат: {res}";
+            }
+            catch (Exception ex)
+            {
+                Result.Text = ex.Message;
+            }
         }
+        
     }
 }
