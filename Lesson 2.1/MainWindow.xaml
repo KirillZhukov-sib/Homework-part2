@@ -6,7 +6,21 @@
         xmlns:local="clr-namespace:Lesson_2._1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+    <Grid ShowGridLines="True">    
+        <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Открыть" Margin="10" Padding="10" Click="Open_Click"/>
+            <Button Content="Сохранить как"  Margin="10" Padding="10" Click="Save_Click"/>
+            <Button Content="О программе" Margin="10" Padding="10" Click="Open2_Click"/>
+        </StackPanel>
+        <TextBox
+            Name="TextBox1"
+            Grid.Row="1"
+            Margin="10"
+            Padding="10"
+            VerticalScrollBarVisibility="Auto"/>
     </Grid>
 </Window>
