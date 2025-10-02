@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lesson_3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="450" Width="450">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Label Content="Имя студента:" HorizontalAlignment="Left" Margin="-5,0,0,0" VerticalAlignment="Center"/>
+        <TextBox Name="TextName" Margin="0,0,0,5" Grid.Row="1"  />
+        <Label Content="Факультет:" HorizontalAlignment="Left" Margin="-5,0,0,0" Grid.Row="2" VerticalAlignment="Center"/>
+        <ComboBox Name="FacultyComboBox" Margin="0,0,0,0" Grid.RowSpan="1" Grid.Row="3" SelectionChanged="FacultyComboBox_SelectionChanged">
+            <ComboBoxItem>C#</ComboBoxItem>
+            <ComboBoxItem>Python</ComboBoxItem>            
+            <ComboBoxItem>Java</ComboBoxItem>
+        </ComboBox>
+        <Label Content="Список доступных курсов:" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="4" VerticalAlignment="Center"/>
+        <ListBox Name="TopicsListBox" Grid.Row="5" Height="Auto" SelectionMode="Extended">
+            
+        </ListBox>
+        <CheckBox Name="check"  Content="Я согласен на обработку персональных данных" HorizontalAlignment="Left" Margin="0,5,0,5" Grid.Row="6" VerticalAlignment="Center"/>
+        <Button Name ="record" Content="Записаться" Margin="0,0,0,0" Grid.Row="7" Click="record_Click"/>
     </Grid>
 </Window>
