@@ -10,10 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Lesson_3
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+{    
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -71,7 +68,7 @@ namespace Lesson_3
             string message = $"Профиль сохранен!\n\n" +
                              $"Имя: {TextName.Text}\n" +
                              $"Факультет: {FacultyComboBox.Text}\n" +
-                             $"Выбранные курсы: {selectedCourses}\n" +
+                             $"Выбранные курсы: {string.Join(", ", selectedCourses)}\n" +
                              $"Согласие на рассылку: {(check.IsChecked == true ? "Да" : "Нет")}";
 
             MessageBox.Show(message, "Успешно", MessageBoxButton.OK, MessageBoxImage.Information);
