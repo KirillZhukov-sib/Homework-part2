@@ -1,24 +1,56 @@
-﻿using System.Text;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Lesson_4
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    public class ToggleButton : Button
     {
-        public MainWindow()
+        public static readonly DependencyProperty IsToggledProperty =
+            DependencyProperty.Register(
+                "IsToggled",
+                typeof(bool),
+                typeof(ToggleButton),
+                new PropertyMetadata(false, OnIsToggledChanged));
+
+        public bool IsToggled
         {
-            InitializeComponent();
+            get { return (bool)GetValue(IsToggledProperty); }
+            set { SetValue(IsToggledProperty, value); }
+        }
+
+        public ToggleButton()
+        {
+            UpdateAppearance();
+
+            this.Click += OnToggleButtonClick;
+        }
+
+        private void OnToggleButtonClick(object sender, RoutedEventArgs e)
+        {
+            IsToggled = !IsToggled;
+        }
+
+        private static void OnIsToggledChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var button = d as ToggleButton;
+            button?.UpdateAppearance();
+        }
+
+        private void UpdateAppearance()
+        {
+            if (IsToggled)
+            {
+                this.Background = new SolidColorBrush(Colors.Green);
+                this.Content = "ON";
+                this.Foreground = new SolidColorBrush(Colors.White);
+            }
+            else
+            {
+                this.Background = new SolidColorBrush(Colors.Red);
+                this.Content = "OFF";
+                this.Foreground = new SolidColorBrush(Colors.White);
+            }
         }
     }
 }
