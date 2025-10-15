@@ -9,4 +9,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\fridge.png" />
+    <None Remove="Images\potato.jpg" />
+    <None Remove="Images\sandwich.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\fridge.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\potato.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\sandwich.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
 </Project>
